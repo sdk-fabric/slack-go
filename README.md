@@ -16,5 +16,21 @@ import (
 
 var client, _ = sdk.Build("[access_token]");
 
-// No sdkgen.lock found to generate usage examples.
+// Deletes a message from a channel.
+response, err := client.Chat().delete(Delete_Message_Request{})
+
+// Retrieves a permalink URL for a specific existing message.
+response, err := client.Chat().getPermalink("channel", "message_ts")
+
+// Sends an ephemeral message to a user in a channel.
+response, err := client.Chat().postEphemeral(Post_Ephemeral_Request{})
+
+// Sends a message to a channel.
+response, err := client.Chat().postMessage(Post_Message_Request{})
+
+// Schedules a message to be sent to a channel at a future time.
+response, err := client.Chat().scheduleMessage(Schedule_Message_Request{})
+
+// Updates a message in a channel.
+response, err := client.Chat().update(Update_Message_Request{})
 ```
